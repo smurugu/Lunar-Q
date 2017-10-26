@@ -34,6 +34,7 @@ def get_action(q_val,index,epsilon):
        
     return int(action),q_max
 
+#### discretize the feature space
 def get_index(features): 
     index=np.zeros(len(features),dtype=np.int8)
     discrete=np.zeros([3,4])
@@ -57,9 +58,9 @@ def get_index(features):
 
 if __name__ == '__main__':
 
-    np.random.seed(0)   #04
+    np.random.seed(0)   
     env = gym.make('LunarLander-v2')
-    env.seed(0) # random seed , checked a half dozen to make sure not a fluke, epsilon is nearly 1
+    env.seed(0) 
     episode_count = 150000
 
     alpha=0  # learning rate... will be set to 1/n
