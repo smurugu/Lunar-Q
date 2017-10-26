@@ -26,7 +26,7 @@ def get_action(q_val,index,epsilon):
     q_max=0
     explore=np.random.sample() # should we explore or exploit
     if explore>epsilon: # if yes explore
-        action=np.round(np.random.sample()*3) # uniform rand var 0 or 1 action
+        action=np.round(np.random.sample()*3) # uniform rand var 0 thru 3 action
     else: # else exploit the q-values for max in this state, take action
         
         action=np.argmax(q_val[index])
@@ -89,7 +89,7 @@ if __name__ == '__main__':
         index_old=get_index(features) # discretize the features and return index
     
         whold[0:4]=w[0:4] # save the last episode's weights
-        qhld[:,:,:,:,:]=q_val[:,:,:,:,:]
+        #qhld[:,:,:,:,:]=q_val[:,:,:,:,:]
         
         ##### rollout loop
         while True:    
